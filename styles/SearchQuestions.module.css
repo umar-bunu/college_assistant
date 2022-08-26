@@ -1,0 +1,13 @@
+.searchSection {
+  display: grid;
+  max-width: 500px;
+  gap: 0.5rem;
+}
+.type {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 0.3rem;
+}
+.active {
+  background-color: rgb(9, 9, 9);
+}

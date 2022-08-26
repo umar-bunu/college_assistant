@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import styles from "../styles/login.module.css";
+import { UserContext } from "./_app";
+import { useRouter } from "next/router";
 function Login() {
+  const useuser = useContext(UserContext);
+
   const [emailError, setemailError] = useState(null);
   const [passError, setpassError] = useState(null);
   const [loginError, setloginError] = useState(null);
+
+  const router = useRouter();
 
   const logUserIn = async (e) => {
     e.preventDefault();
@@ -12,11 +18,13 @@ function Login() {
     setemailError(null);
     setpassError(null);
     try {
-      await signInWithEmailAndPassword(
+      const usercredential = await signInWithEmailAndPassword(
         getAuth(),
         e.target.userEmail.value,
         e.target.userPassword.value
       );
+
+      router.push("/");
     } catch (ex) {
       console.log(ex);
       setloginError(ex.code);
@@ -32,6 +40,7 @@ function Login() {
     //   return false;
     // }
   };
+
   return (
     <div className={styles.main}>
       <h3>Welcome</h3>

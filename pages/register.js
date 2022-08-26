@@ -5,11 +5,17 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import styles from "../styles/login.module.css";
+import ShowModal from "../components/ShowModal";
+import { useRouter } from "next/router";
 function Register() {
+  const router = useRouter();
   const [emailError, setemailError] = useState(null);
   const [passError, setpassError] = useState(null);
   const [loginError, setloginError] = useState(null);
-
+  const [shouldShowModal, setshouldShowModal] = useState(false);
+  const modalAction = async () => {
+    router.replace("/");
+  };
   const logUserIn = async (e) => {
     e.preventDefault();
     setloginError(null);
@@ -21,6 +27,7 @@ function Register() {
         e.target.userEmail.value,
         e.target.userPassword.value
       );
+      setshouldShowModal(true);
     } catch (ex) {
       console.log(ex);
       setloginError(ex.code);
@@ -38,6 +45,14 @@ function Register() {
   };
   return (
     <div className={styles.main}>
+      {shouldShowModal == true && (
+        <ShowModal
+          action={modalAction}
+          content="Account created. Please Login to continue."
+          title={"Success"}
+          setshouldShowModal={setshouldShowModal}
+        />
+      )}
       <h3>Welcome</h3>
       <div>Please fill in below to register</div>
       <form name="loginForm" onSubmit={logUserIn}>

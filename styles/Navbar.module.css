@@ -1,0 +1,33 @@
+.mainDiv {
+  /* border-bottom: 0.2px solid black;
+  box-shadow: 0.2px 0px 8px #888888; */
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  z-index: 16;
+  position: fixed;
+  top: 0px;
+}
+
+.navSpan {
+  padding: 20px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.mainDiv > span:hover {
+  background-color: white;
+  color: black;
+}
+.mainDiv > button {
+  margin-left: auto;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.signOutBtn {
+  color: red;
+  margin-right: 10px;
+}

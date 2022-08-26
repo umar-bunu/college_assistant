@@ -1,0 +1,9 @@
+.eachCourse {
+  padding: 0.5rem;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.eachCourse:hover {
+  background-color: white;
+  color: black;
+}

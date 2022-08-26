@@ -1,0 +1,24 @@
+.container {
+  border: 1px solid white;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: grid;
+  margin-top: 0.5rem;
+}
+.container:hover {
+  background-color: aliceblue;
+  color: black;
+}
+.section {
+  display: flex;
+}
+.session {
+  width: 100%;
+  font-size: 1.25rem;
+}
+.school {
+  margin-left: auto;
+}
+.question {
+  color: rgb(214, 214, 214, 0.8);
+}

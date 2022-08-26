@@ -1,0 +1,26 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  color: white;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.modal {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(78, 77, 77);
+}
+
+.actionButtons {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 5px;
+}
